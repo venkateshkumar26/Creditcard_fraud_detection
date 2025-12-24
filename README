@@ -1,0 +1,47 @@
+# Real-Time Fraud Detection API
+
+This project implements a **real-time fraud detection system** using a trained **LightGBM classifier**, exposed through a **FastAPI REST API**.  
+The API accepts transaction features as input and returns fraud probability and prediction based on a custom decision threshold.
+
+---
+
+## 📌 Project Overview
+
+- Binary classification problem (fraud vs non-fraud)
+- Handles highly imbalanced transaction data
+- Optimized for recall using probability-based thresholding
+- Designed as a production-style ML inference service
+
+---
+
+## 📊 Model Performance
+
+- **Recall:** 0.85  
+- **Precision:** 0.78  
+
+The model prioritizes detecting fraudulent transactions while maintaining a reasonable false-positive rate.
+
+---
+
+## 🧠 Tech Stack
+
+- **Language:** Python  
+- **ML Model:** LightGBM (LGBMClassifier)  
+- **API Framework:** FastAPI  
+- **Model Serialization:** joblib  
+- **Data Handling:** NumPy, Pandas  
+- **Deployment Ready:** Docker / Cloud compatible  
+
+---
+
+## 📁 Project Structure
+
+```text
+fraud_api/
+│
+├── app.py                 # FastAPI application
+├── model/
+│   └── model.pkl          # Trained LightGBM model
+│
+├── requirements.txt
+└── README.md
