@@ -16,7 +16,7 @@ class Input(BaseModel):
 @app.post("/fraud_detector")
 def predict(features:Input):
     X=np.array(features.features).reshape(1,-1)
-    if len(features)!=30:
+    if len(features.features)!=30:
         return {"error":"Expected 30 features"}
     prob=model.predict_proba(X)[0][1]
     pred=int(prob>=THRESHOLD)
